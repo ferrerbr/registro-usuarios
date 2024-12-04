@@ -1,0 +1,150 @@
+package com.proyecto1.red.model;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="usuarios2",schema="db")
+public class User2 {
+	//Atributos
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+	
+	@Column(name = "name", length = 50, nullable = false, unique = false)
+	private String name;
+	
+	@Column(name = "lastname", length = 50, nullable = false, unique = false)
+	private String lastName;
+	
+	@Column(name = "email", length = 50, nullable = false, unique = false)
+	private String email;
+	
+	@Column(name = "password", length = 50, nullable = false, unique = false)
+	private String password;
+	
+	@Column(name = "birthdate", length = 50, nullable = false, unique = false)
+	private LocalDate birthdate;
+	
+	@Column(name = "adress", length = 50, nullable = false, unique = false)
+	private String address;
+	
+	public User2() {
+		
+	}
+	
+	public User2(Long id, String name, String lastName, String email, String password, LocalDate birthdate,
+			String address) {
+		
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.birthdate = birthdate;
+		this.address = address;
+	}
+
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "User2 [id=" + id + ", name=" + name + ", lastName=" + lastName + ", email=" + email + ", password="
+				+ password + ", birthdate=" + birthdate + ", address=" + address + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, birthdate, email, id, lastName, name, password);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User2 other = (User2) obj;
+		return Objects.equals(address, other.address) && Objects.equals(birthdate, other.birthdate)
+				&& Objects.equals(email, other.email) && Objects.equals(id, other.id)
+				&& Objects.equals(lastName, other.lastName) && Objects.equals(name, other.name)
+				&& Objects.equals(password, other.password);
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,8 @@
+package com.proyecto1.red.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class RedService2 {
+
+}

@@ -1,0 +1,12 @@
+{
+    "id":"1",
+    "nombre":"Brandon",
+    "apellido":"Ferrer",
+    "correo":"ferrer@email.com",
+    "contrasena":"Elmoro10",
+    "edad":"27",
+    "direccion":"coahulia 200 Roma sur",
+    "profile_pic":"../img/brandonpic.jpeg",
+    "informacion":"Hola buenas tardes mi nombre es Russell y soy un guia explorador de la tribu 54, guarida 12 ¿Necesita que le brinde ayuda en algo señor?,¿Le ayudo a...atravesar la calle?,AHH que...atraviese su jardin?,  aaaaa que..atraviese su portico?"
+
+}

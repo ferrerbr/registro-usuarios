@@ -1,0 +1,20 @@
+package com.proyecto1.red.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.proyecto1.red.repository.Repositorio;
+
+@Service
+public class Servicio {
+	//atriutos
+	 private Repositorio repositorio;
+	
+	//Metodo costructor con inyeccion de dependencias
+	 @Autowired
+	public Servicio (Repositorio repositorio) {
+		 this.repositorio = repositorio;
+	 }
+	 
+
+}

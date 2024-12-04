@@ -1,0 +1,65 @@
+package com.proyecto1.red.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.proyecto1.red.exceptions.UsuarioYaExiste;
+import com.proyecto1.red.model.Usuario;
+import com.proyecto1.red.repository.Repositorio;
+
+@Service
+public class Servicio {
+	//atriutos
+	 private Repositorio repositorio;
+	
+	//Metodo costructor con inyeccion de dependencias
+	 @Autowired
+	public Servicio (Repositorio repositorio) {
+		 this.repositorio = repositorio;
+	 }
+	 
+	 //Metodo para crear un nuevo usuario 
+	 public Usuario nuevoUsuarioServicio(Usuario nuevoUsuario) {
+		 if(repositorio.existsByCorreo(nuevoUsuario.getCorreo())) {
+			 throw new UsuarioYaExiste("El usuario con el correo " + nuevoUsuario.getCorreo() + " ya tiene una cuenta existente!");
+		 }
+		 return repositorio.save(nuevoUsuario);
+		 
+	 }
+	 
+	 //Metodo para inicio de sesion de usuario 
+	 public Boolean inicioDeSesionServicio(String correo, String contrasena) {
+		 Optional<Usuario> verificacion = repositorio.findByCorreo(correo);
+		  if (!verificacion.isPresent()) {
+			  return false;
+			  
+		  }else {
+			  Usuario comprovacionContrasena = verificacion.get();
+			  return comprovacionContrasena.getContrasena().equals(contrasena);
+		  }
+	 }
+	 
+	 
+	 //Metodo para optener un usuario por su correo electronico 
+	 public Usuario getUsuarioServicio(String correo) {
+		 Optional<Usuario> usuarioGet =repositorio.findByCorreo(correo);
+		return usuarioGet.get();
+	 }
+	 
+	 
+	//Metodo para eliminar el ususario 
+		 public Boolean eliminarServicio(String correo, String contrasena) {
+			 Optional<Usuario> verificacion = repositorio.findByCorreo(correo);
+			  if (!verificacion.isPresent()) {
+				  return false;
+				  
+			  }else {
+				  Usuario comprovacionContrasena = verificacion.get();
+				  return comprovacionContrasena.getContrasena().equals(contrasena);
+			  }
+		 }
+	 
+
+}

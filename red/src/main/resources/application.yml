@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: red
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/redDB
+    username: root
+    password: 17Uach1997Gim22
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+   

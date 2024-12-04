@@ -1,0 +1,20 @@
+package com.proyecto1.red.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.proyecto1.red.service.Servicio;
+
+@RestController
+@RequestMapping("/api/social")
+//@CrossOriging("http:/www.direccion del cliente del cual se realizaran las peticiones.com")
+public class Controlador {
+	//Atributos 
+	private Servicio servicio;
+	
+	//Mertodo cosntructor con inyecion de dependencias
+	 public Controlador (Servicio servicio) {
+		 this.servicio = servicio;
+	 }
+
+}

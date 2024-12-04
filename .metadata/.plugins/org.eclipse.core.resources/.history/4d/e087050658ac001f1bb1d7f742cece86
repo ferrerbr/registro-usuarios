@@ -1,0 +1,35 @@
+package com.proyecto1.red.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.proyecto1.red.exceptions.UsuarioYaExiste;
+import com.proyecto1.red.model.User2;
+import com.proyecto1.red.repository.RedRepository2;
+
+//En esta clase vive toda la logica del negocio
+@Service
+public class RedService2 {
+	//Atributos 
+	private RedRepository2 redRepository2;
+	
+	//constructor
+	@Autowired
+	public RedService2(RedRepository2 redRepository2) {
+		this.redRepository2 = redRepository2;
+	}
+	
+	//metodo para crear un nuevo usuario
+	public User2 nuevoUsuario(User2 newUser) {
+		if(redRepository2.existsByEmail(newUser.getEmail() ) ){
+			throw new UsuarioYaExiste("el ususario con el correo "+ newUser.getEmail() + " ya existe");
+			
+		}
+		return redRepository2.save(newUser);
+	}
+	
+	
+	
+	
+	
+}

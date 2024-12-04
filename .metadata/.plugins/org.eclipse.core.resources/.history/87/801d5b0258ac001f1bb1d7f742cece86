@@ -1,0 +1,15 @@
+package com.proyecto1.red.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.proyecto1.red.model.User2;
+
+public interface RedRepository2  extends JpaRepository<User2,Long>{
+	
+	//aqui viviran todos los metodos para intanciar usuarios en la entidad 
+	//podemos definir nuevos metodos de consulta  usando una nomenclatura especifica nombres mas comunes findBy, existsBy, contBy, deleteBy,
+	
+	//Metodo para validar si el usuario existe verificando su correo 
+	boolean existsByEmail(String email);
+
+}

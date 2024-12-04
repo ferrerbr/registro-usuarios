@@ -1,0 +1,32 @@
+package com.proyecto1.red.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.proyecto1.red.exceptions.UsuarioYaExiste;
+import com.proyecto1.red.model.Usuario;
+import com.proyecto1.red.repository.Repositorio;
+
+@Service
+public class Servicio {
+	//atriutos
+	 private Repositorio repositorio;
+	
+	//Metodo costructor con inyeccion de dependencias
+	 @Autowired
+	public Servicio (Repositorio repositorio) {
+		 this.repositorio = repositorio;
+	 }
+	 
+	 //Metodo para crear un nuevo usuario 
+	 public Usuario nuevoUsuarioServicio(Usuario nuevoUsuario) {
+		 boolean existeUsuario = repositorio.existsByCorreo(nuevoUsuario.getCorreo());
+		 if(existeUsuario) {
+			 throw new UsuarioYaExiste("El usuario con el correo " + nuevoUsuario.getCorreo() + " ya tiene una cuenta existente!");
+		 }
+		 return repositorio.save(nuevoUsuario);
+		 
+	 }
+	 
+
+}

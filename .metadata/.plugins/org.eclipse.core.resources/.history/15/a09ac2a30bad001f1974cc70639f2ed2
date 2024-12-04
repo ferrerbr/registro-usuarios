@@ -1,0 +1,14 @@
+package com.proyecto1.red.service;
+
+import com.proyecto1.red.repository.Repositorio;
+
+public class Servicio {
+	//atributos 
+	 private Repositorio repositorio;
+	
+	//Metodo constructor con inyeccion de dependencias
+	public Servicio(Repositorio respositorio) {
+		this.repositorio = respositorio;
+	}
+
+}

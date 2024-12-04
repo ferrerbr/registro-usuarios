@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!--Hoja de estilos -->
+    <link rel="stylesheet" href="../styles/perfil.css">
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="header-red">
+        <div id="logo"><a href=""> <img src="../img/favicon.png" alt="Logo"></a></div>
+        <div class="logout-menu" > 
+            <button type="button" id="logout-button">logout</button>
+           <div id="menu-hamburguesa">
+            <img src="../img/Polygon 1.png" alt="menu-hamburguesa" class="menu-triangulo"  id="triangulo">
+             <div id="menu-menu"></div>
+            <button id="eliminar-cuenta" class="menu-hamb-desplegable" >Eliminar Cuenta</button>
+            <button id="editar-info" class="menu-hamb-desplegable">Editar informacion</button>
+             
+           </div>
+        </div>
+        
+    </div>
+   
+    <div class="container">
+        <div class="profile-box" id="cuadro-azul">
+            <div class="pic-name">
+                <img src="" alt="profile_pic" id="profile-pic">
+                <p id="nombre-apellido"></p>
+            </div>
+            <div class="informacion">
+                <p style="height: 5px;">Acerca de mi:</p>
+                
+                <div style="display: flex; align-items: flex-start;">
+                    <p id="informacion"></p>
+                </div>
+                
+                <div class="direccion-edad">
+                    <p id="informacion-direccion">Direccion:</p>
+                    <p id="informacion-edad">Edad:</p>
+                </div>
+            </div>
+            
+          
+            
+            
+        </div>
+    </div> 
+    
+    <script src="../js/perfil.js"></script>
+</body>
+</html>

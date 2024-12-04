@@ -1,0 +1,5 @@
+package com.proyecto1.red.exceptions;
+
+public class UsuarioYaExiste extends Exception {
+
+}

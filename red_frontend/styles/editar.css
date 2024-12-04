@@ -1,0 +1,147 @@
+body{
+    margin: 0;
+}
+:root{
+    --color-1: #DDF344; /* verde */
+    --color-2: #1B198F; /*azul */
+    --color-3: #4849E8; /*morado fuerte*/
+    --color-4: #ABC4FF; /* morado suave */
+   
+}
+.header-red{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--color-1);
+    padding: 10px, 20px;
+    height: 60px;
+    border: none;
+
+}
+#logo{
+    margin-left: 20px;
+}
+#logo img{
+    height: 30px ;
+    width: auto;
+}
+.logout-menu{
+    display: flex;
+    flex-direction: row;
+}
+.logout-menu button{
+    background-color: var(--color-3);
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    border: solid transparent;
+    color: var(--color-1);
+    font-family: 'Dosis', sans-serif;
+    font-size: 110%;
+    margin-right: 20px;
+    cursor: pointer;
+
+}
+.logout-menu button:hover{
+    border:var(--color-3) solid;
+    background-color: var(--color-1);
+    color: var(--color-3);
+
+}
+
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.profile-box{
+    width: 120vh;
+    height: auto;
+    background-color: var(--color-4) ;
+    
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+#profile-pic{
+    width: 30vh;
+    border-radius: 5px;
+}
+
+.pic-name{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    margin-bottom: 10px;
+}
+
+#boton-foto{
+    position: absolute;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+
+}
+#input-foto{
+    display: none;
+    
+}
+#nombre-apellido{
+    margin-left: 30px;
+    font-family: 'Dosis', sans-serif;
+    color: var(--color-3);
+    font-size: 4vh;
+    font-weight: bolder;
+}
+#nombre-nombre{
+    margin-left: 30px;
+    font-family: 'Dosis', sans-serif;
+    color: var(--color-3);
+    font-size: 4vh;
+    font-weight: bolder;
+}
+.informacion-box{
+    height:auto;
+    
+    background-color: var(--color-3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Dosis', sans-serif;
+    font-size:larger;
+}
+#informacion{
+    min-width: 99%;
+    min-height:100px;
+    resize: none;
+    font-family: 'Dosis', sans-serif;
+    font-size:large;
+    border: 2px solid #ccc; 
+
+}
+#informacion:focus{
+    outline: none;
+}
+.direccion-edad{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+#informacion-direccion{
+    min-width: 350px;
+    max-height: 30px;
+}
+#informacion-edad{
+    min-width: 80px;
+}
+.profile-box input{
+    border: 2px solid #ccc; 
+}
+.profile-box input:focus{
+    outline: none;
+}

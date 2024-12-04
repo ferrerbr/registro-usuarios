@@ -1,0 +1,82 @@
+package com.proyecto1.red.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.proyecto1.red.exceptions.UsuarioNoFound;
+import com.proyecto1.red.exceptions.UsuarioYaExiste;
+import com.proyecto1.red.model.Usuario;
+import com.proyecto1.red.repository.Repositorio;
+
+@Service
+public class Servicio {
+	//atriutos
+	 private Repositorio repositorio;
+	
+	//Metodo costructor con inyeccion de dependencias
+	 @Autowired
+	public Servicio (Repositorio repositorio) {
+		 this.repositorio = repositorio;
+	 }
+	 
+	 //Metodo para crear un nuevo usuario 
+	 public Usuario nuevoUsuarioServicio(Usuario nuevoUsuario) {
+		 if(repositorio.existsByCorreo(nuevoUsuario.getCorreo())) {
+			 throw new UsuarioYaExiste("El usuario con el correo " + nuevoUsuario.getCorreo() + " ya tiene una cuenta existente!");
+		 }
+		 return repositorio.save(nuevoUsuario);
+		 
+	 }
+	 
+	 //Metodo para inicio de sesion de usuario 
+	 public Boolean inicioDeSesionServicio(String correo, String contrasena) {
+		 Optional<Usuario> verificacion = repositorio.findByCorreo(correo);
+		  if (!verificacion.isPresent()) {
+			  return false;
+			  
+		  }else {
+			  Usuario comprovacionContrasena = verificacion.get();
+			  return comprovacionContrasena.getContrasena().equals(contrasena);
+		  }
+	 }
+	 
+	 
+	 //Metodo para obtener un usuario por su correo electronico 
+	 public Usuario getUsuarioServicio(String correo) {
+		 Optional<Usuario> usuarioGet =repositorio.findByCorreo(correo);
+		return usuarioGet.get();
+	 }
+	 
+	 
+	//Metodo para eliminar el usuario 
+	public Boolean eliminarServicio(String correo, String contrasena) {
+		Optional<Usuario> verificacion = repositorio.findByCorreo(correo);
+			Usuario usuarioEliminar =verificacion.get();
+			if(usuarioEliminar.getContrasena().equals(contrasena)) {
+				repositorio.delete(usuarioEliminar);
+				  
+				return true;
+			}else {
+				return false;
+			}
+	}
+		 //Metodo para actualizar un usuario completamente
+	public Usuario actualizarServicio(Usuario nuevo) {
+		Optional<Usuario> getUsuario = repositorio.findByCorreo(nuevo.getCorreo());
+		if(getUsuario.isEmpty()) {
+			throw new UsuarioNoFound("Usuario no encontrado");
+		}
+		Usuario actual =getUsuario.get();
+		actual.setNombre(nuevo.getNombre());
+		actual.setApellido(nuevo.getApellido());
+		actual.setCorreo(nuevo.getCorreo());
+		actual.setContrasena(nuevo.getContrasena());
+		actual.setFechaDeNacimiento(nuevo.getFechaDeNacimiento());
+		actual.setFotoDePerfil(nuevo.getFotoDePerfil());
+		return repositorio.save(actual);
+	}
+	 
+
+}

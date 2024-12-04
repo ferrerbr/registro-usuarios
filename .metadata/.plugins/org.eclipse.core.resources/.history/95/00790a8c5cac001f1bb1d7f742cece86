@@ -1,0 +1,9 @@
+package com.proyecto1.red.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.proyecto1.red.model.Usuario;
+
+public interface Repositorio  extends JpaRepository<Usuario,Long>{
+
+}

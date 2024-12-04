@@ -1,0 +1,14 @@
+package com.proyecto1.red.exceptions;
+
+public class UsuarioYaExiste extends Exception {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//esto seria como un constructor 
+	public  UsuarioYaexiste(String mensaje) {
+		super( mensaje);
+	}
+
+}

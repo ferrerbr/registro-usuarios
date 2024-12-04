@@ -1,0 +1,18 @@
+package com.proyecto1.red.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.proyecto1.red.model.Usuario;
+
+public interface Repositorio  extends JpaRepository<Usuario,Long>{
+	
+	//Metodo para verificar si el ususario existe 
+	public Boolean existsByCorreo(String correo);
+	
+	//Metodo para encontrar un usuario por correo
+	Optional<Usuario> findByCorreo(String correo);
+	
+	
+}

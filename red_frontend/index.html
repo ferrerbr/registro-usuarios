@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <!--Hoja de estilos -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="header-red">
+        <div id="logo"> <img src="./img/favicon.png" alt="Logo"></div>
+        <div></div>
+        
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h1 class="text-login">Login</h1>
+            <div style="display: flex;justify-content:center;">
+                <span id="validacionmail"></span>
+                <input type="text" id="email-in" class="input-login" placeholder="email"></div>
+            <div class="login-div">
+                <span id="validacionpassword"></span>
+                <input type="password" id="password-in"  class="input-login" placeholder="contraseña">
+                <div class="login-box-text">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me-checkbox" name="recordar-contrasena">
+                        <p class="texto-1">Remeber me</p>
+                    </div>
+                    <a href=""> <p class="texto-1">Forget Password?</p></a>
+                </div>
+           </div>
+            <div class="login-div" >
+                <button id="button-login">Login</button>
+            <div class="login-box-text-registro">
+                <p class="texto-1">Aun no tienes cuenta</p>
+                <a href="./html/sigIn.html"> <p class="texto-1">REGISTRARME</p> </a>
+            </div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="./js/index.js"></script>
+
+</body>
+</html>

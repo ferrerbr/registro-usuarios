@@ -1,0 +1,23 @@
+package com.proyecto1.red.model;
+
+public class InicioUsuario {
+	//atributos
+	private String correo;
+	private String constrasena;
+	public String getCorreo() {
+		return correo;
+	}
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	public String getConstrasena() {
+		return constrasena;
+	}
+	public void setConstrasena(String constrasena) {
+		this.constrasena = constrasena;
+	}
+	
+	//getters  y setters
+	
+
+}

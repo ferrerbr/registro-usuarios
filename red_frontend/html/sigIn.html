@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!--Hoja de estilos -->
+    <link rel="stylesheet" href="../styles/sigin.css">
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="header-red">
+        <div id="logo"> <a href="../index.html"> <img src="../img/favicon.png" alt="Logo"> </a></div>
+        <div></div>
+        
+    </div>
+    <div class="container">
+        <form class="form-box">
+           <div class="formulario-div">
+            <h1 class="text-form">Formulario de registro</h1>
+           </div>
+            <div class="formulario">
+                <div class="colum-1">
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-nombre" >.</span>
+                        <input type="text" placeholder="Nombre" id="name" required>
+                    </div>
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-apellido"> .</span>
+                        <input type="text" placeholder="Apellido" id="lastname" required>
+                    </div>
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-email"> .</span>
+                        <input type="text" placeholder=" Email" id="email" required>
+                    </div>
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-contrasena"> .</span>
+                        <input type="password" placeholder="Contraseña" id="password" required>
+                    </div>
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-confirmar"> .</span>
+                        <input type="password" placeholder="Confirmar constraseña" id="password-confirm" required>
+                    </div>
+                    
+                </div>
+                <div class="colum-2">
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-fecha"> Fecha de nacimiento</span>
+                        <input type="date" placeholder="Fecha de Nacimiento" id="birthday" required>
+                    </div>
+                    <div class="input-span">
+                        <span class="spanFormato" id="span-direccion"> .</span>
+                        <input type="text" placeholder="Direccion" id="addres" required>    
+                    </div>
+                    <div class="vacio"></div>
+                    <div class="vacio"></div>
+                    <div class="div-button">
+                        <p class="texto-t-c">Al dar click en el boton de registro estas aceptando nuestros <a href="./t&c.html">terminos y condiciones</a></p>
+                        <div class="div-button-b">
+                            <button id="registrar">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </form>
+    </div> 
+    <script src="../js/sigIn.js"></script>
+    
+</body>
+</html>
